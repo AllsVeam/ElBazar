@@ -47,6 +47,9 @@ public class LibroController {
 	@Autowired
 	private IntServiceClasificacion serviceClas;
 	
+	@Autowired
+	private Utileria util;
+	
 	@GetMapping("/index")
 	public String mostrarIndex(Model model, Pageable page){
 		Page<Libro> libro = serviceLib.buscarTodas(page);
@@ -64,7 +67,7 @@ public class LibroController {
 	}
 	
 	@PostMapping("/guardar")
-	public String guardarLibro(Libro libro, BindingResult result, @RequestParam("archivoImagen") MultipartFile multiPart, RedirectAttributes model) {
+	public String guardarLibro(Libro libro, BindingResult result, @RequestParam("archivoImagen") MultipartFile file, RedirectAttributes model) {
 		if(result.hasErrors()) {
 			for(ObjectError error: result.getAllErrors()) {
 				System.out.println("Ocurrio un error: "+error.getDefaultMessage());
@@ -72,17 +75,26 @@ public class LibroController {
 			model.addAttribute("libro", serviceLib.obtenerLibros());
 			return "libro/formLibro";
 		}
-		if (!multiPart.isEmpty()) {
-			//String ruta = "/empleos/img-vacantes/"; // Linux/MAC
-			//String ruta = "c:/empleos/img-vacantes/"; // Windows
-			String nombreImagen = Utileria.guardarArchivo(multiPart, ruta);
-			if (nombreImagen != null){ // La imagen si se subio
-			// Procesamos la variable nombreImagen
-			libro.setPortada(nombreImagen); 
+		if (libro.getId() == null) {
+			if (!file.isEmpty()) {
+				String fileName = util.uploadImage(file);
+				if (fileName != null) {
+					libro.setPortada(fileName);
+				}
 			}
+			model.addFlashAttribute("msg", "La información del producto ha sido agregada correctamente.");
+		} else {
+			if (!file.isEmpty()) {
+				String fileName = util.uploadImage(file);
+				if (fileName != null) {
+					libro.setPortada(fileName);
+					model.addFlashAttribute("msg", "La información del producto ha sido modificada correctamente.");
+				}
+			} else {
+				Libro p = serviceLib.buscarPorId(libro.getId());
+				libro.setPortada(p.getPortada());
 			}
-		if(libro.getId()==null) model.addFlashAttribute("msg", "Libro guardado");
-		else model.addFlashAttribute("msg", "Libro modificado");
+		}
 
 		serviceLib.guardar(libro);
 		return "redirect:/libro/index";
