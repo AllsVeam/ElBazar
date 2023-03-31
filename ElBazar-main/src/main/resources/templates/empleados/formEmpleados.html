@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Libreria | El Bazar del >Empleado</title>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Bootstrap core CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+
+	<!-- Material Design Bootstrap -->
+	<link href="css/mdb.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header>
+		<nav th:insert="fragmentos/menu.html::menu-secundario">
+		</nav>
+	</header>
+
+	<!-- Main container-->
+	<div class="container" style="margin-top: -45rem;">
+
+		<div class="card">
+			<h4 class="card-header"><strong>Datos del >Empleado</strong></h4>
+			<div class="card-body">
+				<form>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="nombre">Nombre</label>
+								<input type="text" class="form-control" id="nombre" name="nombre"
+									placeholder="Titulo del >Empleado" required="required">
+							</div>
+						</div>
+						<div class="col-md-9">
+							<div class="form-group">
+								<label for="descripcion">Descripción</label>
+								<input type="text" class="form-control" id="descripcion" name="descripcion"
+									placeholder="Breve descripcion del >Empleado" required="required">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="categoria">Categoría</label>
+								<select class="form-control" name="categoria" id="categoria">
+									<option value="1">Ventas</option>
+									<option value="2">Contabilidad</option>
+									<option value="3">Transporte</option>
+									<option value="4">Informatica</option>
+									<option value="5">Construccion</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="estatus">Estatus</label>
+								<select class="form-control" name="estatus" id="estatus">
+									<option value="Creada">Creada</option>
+									<option value="Aprobada">Aprobada</option>
+									<option value="Eliminada">Eliminada</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="fecha">Fecha de Publicación</label>
+								<input type="text" class="form-control" name="fecha" id="fecha"
+									placeholder="Fecha de publicacion" required="required">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-check">
+								<label class="form-check-label" for="destacado0"></label><br>
+								<input class="form-check-input" type="radio" name="destacado" id="destacado" value="1"
+									checked="checked">
+								<label class="form-check-label" for="destacado1">Destacado</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="destacado" id="destacado" value="0">
+								<label class="form-check-label" for="destacado2">No Destacado</label>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="salario">Salario Ofrecido (Aprox)</label>
+								<input type="text" class="form-control" name="salario" id="salario"
+									placeholder="Salario aproximado." required="required">
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="archivoImagen">Imagen</label>
+								<input type="file" class="form-control-file" name="archivoImagen" id="archivoImagen">
+							</div>
+						</div>
+					</div>
+					<hr>
+					<div class="row">
+						<div class="col-md-9">
+							<div class="form-group">
+								<label for="detalles"><strong>Detalles</strong></label>
+								<textarea class="form-control" name="detalles" id="detalles" rows="7"></textarea>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<label for="imagen">Imagen/Logo</label>
+							<img class="rounded mx-auto d-block" src="images/construccion-logo.png"
+								alt="Generic placeholder image" width="200" height="200">
+						</div>
+					</div>
+					<button type="submit" class="btn btn-primary">Guardar</button>
+				</form>
+			</div>
+		</div>
+
+
+	</div>
+	<!--/ Main container-->
+
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only elegant-color-dark">
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				© 20232 Copyright: AE Design web </a>
+
+			</div>
+		</div>
+		<br>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+	<!-- SCRIPTS -->
+
+	<!-- JQuery -->
+	<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+
+	<!-- Bootstrap dropdown -->
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" th:src="@{/js/mdb.min.js}"></script>
+
+	<!--Google Maps-->
+	<script th:src="@{https://maps.google.com/maps/api/js}"></script>
+
+
+	<!-- SCRIPTS -->
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+
+	<!-- Bootstrap dropdown -->
+	<script type="text/javascript" src="js/popper.min.js"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="js/mdb.min.js"></script>
+
+	<!--Google Maps-->
+	<script src="https://maps.google.com/maps/api/js"></script>
+
+	<!-- Animations init-->
+	<script>
+		new WOW().init();
+	</script>
+
+
+</body>
+
+</html>

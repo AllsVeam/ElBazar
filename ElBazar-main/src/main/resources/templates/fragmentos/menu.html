@@ -1,0 +1,46 @@
+<!--Navbar-->
+<nav th:fragment="menu-principal" class="navbar navbar-expand-lg navbar-dark elegant-color-dark fixed-top">
+	<div class="container">
+		<a class="navbar-brand" th:href="@{/}">Home</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+			aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/libro?id=0}">Libros</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/libro/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')" >Lista de libros</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/editorial/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Editorial</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/clasificacion/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Clasificacion</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/autor/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Autor</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/compras/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Compras</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/index}" sec:authorize="hasAnyAuthority('Administrador')">Empleados</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/empleados/index}" sec:authorize="hasAnyAuthority('Administrador')">Usuarios</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" th:href="@{/acerca}">Acerca</a>
+				</li>
+				<a class="btn btn-primary" th:href="@{/login}">Ingresar</a>&nbsp;
+				<a class="btn btn-primary" th:href="@{/signup}">Registrarse</a>&nbsp;
+				<a class="btn btn-danger" th:href="@{/logout}" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')">Salir</a>
+			</ul>
+
+		</div>
+	</div>
+</nav>
+<!--/Navbar-->

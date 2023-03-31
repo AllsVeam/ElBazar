@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es" class="full-height" xmlns:th="https://thymeleaf.org">
+
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Libreria | El Bazar del Libro</title>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" th:href="@{/https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
+
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+
+	<!-- Material Design Bootstrap -->
+	<link th:href="@{css/mdb.min.css}" rel="stylesheet">
+
+	<link th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css}" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+	<header>
+
+		<!--Navbar-->
+		<navbar th:insert="~{fragmentos/menu.html::menu-principal}"></navbar>
+		<!--/.Navbar-->
+	</header>
+
+	<!-- Main container-->
+	<div class="container" style="margin-top: -55rem;">
+
+		<div class="divider-new pt-5">
+			<h2 class="h2-responsive wow fadeIn" data-wow-delay="0.2s">Nosotros</h2>
+		</div>
+		<!--Section: About-->
+		<section id="about" class="text-center wow fadeIn" data-wow-delay="0.2s">
+
+			<p>Librería El Bazar del Libro cuenta con una amplia oferta de literatura infantil, juvenil, interés general
+				y textos</p>
+			<p>Desde septiembre del 2003, Librería El Bazar del Libro abre sus puertas al mundo de los libros, dando la
+				bienvenida a todos nuestros lectores; con el paso del tiempo se diversifica, siendo pioneros en la zona
+				ofreciendo servicios en ferias de libro, colegios y brindando atenciones de calidad.
+				<br> Contamos con un Centro de Atención Telefónica que brinda servicio de apartado, ventas y envío a
+				domicilio.
+
+				<br> Destacada por su eficiencia y experiencia en el medio, ha logrado un posicionamiento en
+				distribución directa a colegios, venta a mayoristas y minoristas.
+			</p>
+
+		</section>
+		<!--Section: About-->
+
+
+		<div class="divider-new pt-5">
+			<h2 class="h2-responsive wow fadeIn"> Libros en </h2>
+		</div>
+
+		<!--Section: Best features-->
+		<section id="best-features">
+
+			<div class="row pt-4">
+
+				<!--First columnn-->
+				<div class="col-lg-3 mb-r">
+
+					<!--Card-->
+					<div class="card wow fadeIn">
+
+						<!--Card image-->
+						<img class="img-fluid"
+							src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(25).jpg"
+							alt="Card image cap">
+
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h4 class="card-title text-center">360 Advertising</h4>
+							<hr>
+							<!--Text-->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk
+								of the card's content.</p>
+						</div>
+
+					</div>
+					<!--/.Card-->
+				</div>
+				<!--First columnn-->
+
+				<!--Second columnn-->
+				<div class="col-lg-3 mb-r">
+					<!--Card-->
+					<div class="card wow fadeIn" data-wow-delay="0.2s">
+
+						<!--Card image-->
+						<img class="img-fluid"
+							src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(14).jpg"
+							alt="Card image cap">
+
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h4 class="card-title text-center">Top-class Team</h4>
+							<hr>
+							<!--Text-->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk
+								of the card's content.</p>
+						</div>
+
+					</div>
+					<!--/.Card-->
+				</div>
+				<!--Second columnn-->
+
+				<!--Third columnn-->
+				<div class="col-lg-3 mb-r">
+					<!--Card-->
+					<div class="card wow fadeIn" data-wow-delay="0.4s">
+
+						<!--Card image-->
+						<img class="img-fluid"
+							src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(21).jpg"
+							alt="Card image cap">
+
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h4 class="card-title text-center">Top-class Team</h4>
+							<hr>
+							<!--Text-->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk
+								of the card's content.</p>
+						</div>
+
+					</div>
+					<!--/.Card-->
+				</div>
+				<!--Third columnn-->
+
+				<!--First columnn-->
+				<div class="col-lg-3 mb-r">
+					<!--Card-->
+					<div class="card wow fadeIn" data-wow-delay="0.6s">
+
+						<!--Card image-->
+						<img class="img-fluid"
+							src="https://mdbootstrap.com/img/Photos/Horizontal/Work/4-col/img%20(37).jpg"
+							alt="Card image cap">
+
+						<!--Card content-->
+						<div class="card-body">
+							<!--Title-->
+							<h4 class="card-title text-center">24/7 Support</h4>
+							<hr>
+							<!--Text-->
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk
+								of the card's content.</p>
+						</div>
+
+					</div>
+					<!--/.Card-->
+				</div>
+				<!--First columnn-->
+			</div>
+
+		</section>
+		<!--/Section: Best features-->
+
+		<div class="divider-new">
+			<h2 class="h2-responsive wow fadeIn">Visitanos en nuestra sucursal y ponte en contacto con nostros</h2>
+		</div>
+
+		<!--Section: Contact-->
+		<section id="contact pb-5">
+			<div class="row">
+				<!--First column-->
+				<div class="col-md-8 mb-5">
+					<div id="map-container" class="z-depth-1 wow fadeIn" style="height: 300px"></div>
+				</div>
+				<!--/First column-->
+
+				<!--Second column-->
+				<div class="col-md-4">
+					<ul class="text-center list-unstyled">
+						<li class="wow fadeIn" data-wow-delay="0.2s"><i class="fa fa-map-marker teal-text fa-lg"></i>
+							<p>Av. 4a. Avenida 47, Benito Juárez, 57000 Nezahualcóyotl, Méx.</p>
+						</li>
+
+						<li class="wow fadeIn mt-5 pt-2" data-wow-delay="0.3s"><i
+								class="fa fa-phone teal-text fa-lg"></i>
+							<p>5544524972</p>
+						</li>
+
+						<li class="wow fadeIn mt-5 pt-2" data-wow-delay="0.4s"><i
+								class="fa fa-envelope teal-text fa-lg"></i>
+							<p>elbazardellibroneza@gmail.com</p>
+						</li>
+					</ul>
+				</div>
+				<!--/Second column-->
+			</div>
+		</section>
+		<!--Section: Contact-->
+
+	</div>
+	<!--/ Main container-->
+
+
+	<!--Footer-->
+	<footer class="page-footer center-on-small-only elegant-color-dark">
+		<!--Copyright-->
+		<div class="footer-copyright">
+			<div class="container-fluid">
+				© 20232 Copyright: AE Design web </a>
+
+			</div>
+		</div>
+		<br>
+		<!--/.Copyright-->
+
+	</footer>
+	<!--/.Footer-->
+
+
+	<!-- SCRIPTS -->
+
+	<!-- JQuery -->
+	<script type="text/javascript" th:src="@{/js/jquery-3.2.1.min.js}"></script>
+
+	<!-- Bootstrap dropdown -->
+	<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" th:src="@{/js/mdb.min.js}"></script>
+
+	<!--Google Maps-->
+	<script th:src="@{https://maps.google.com/maps/api/js}"></script>
+	<script>
+		function init_map() {
+
+			var var_location = new google.maps.LatLng(19.41297796521497, -99.01523024495174);
+
+			var var_mapoptions = {
+				center: var_location,
+
+				zoom: 17
+			};
+
+			var var_marker = new google.maps.Marker({
+				position: var_location,
+				map: var_map,
+				title: "Nezahualcoyotl"
+			});
+
+			var var_map = new google.maps.Map(document.getElementById("map-container"),
+				var_mapoptions);
+
+			var_marker.setMap(var_map);
+
+		}
+
+		google.maps.event.addDomListener(window, 'load', init_map);
+	</script>
+
+	<!-- Animations init-->
+	<script>
+		new WOW().init();
+	</script>
+
+
+</body>
+
+</html>
