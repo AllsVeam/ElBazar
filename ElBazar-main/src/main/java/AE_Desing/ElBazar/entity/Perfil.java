@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="perfiles")
+@Table(name="Perfiles")
 public class Perfil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
