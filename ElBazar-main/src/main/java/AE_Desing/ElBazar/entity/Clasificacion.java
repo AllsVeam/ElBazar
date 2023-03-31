@@ -39,7 +39,5 @@ public class Clasificacion {
 	public String toString() {
 		return "Clasificacion [id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + "]";
 	}
-	
-	
 
 }
