@@ -44,16 +44,14 @@ public class EditorialController {
 	@GetMapping("/eliminar")
 	public String eliminar(@RequestParam("id") int idEditorial, RedirectAttributes model) {		
 		for (Libro libro : serviceLib.obtenerLibros()) {
-			if (libro.getEditorial().getId() == idEditorial) {				
+			if (libro.getEditorial().getId()==idEditorial) {				
 				model.addFlashAttribute("msg", "La Editorial no se puede eliminar pertenece a un libro");
-				return "redirect:/editorial/index";
-			}else {
-				model.addFlashAttribute("msg", "Editorial Eliminada correctamente");
-				serviceEdit.eliminar(idEditorial);
 				return "redirect:/editorial/index";
 			}
 		}			
-		return null;
+		model.addFlashAttribute("msg", "Editorial Eliminada correctamente");
+		serviceEdit.eliminar(idEditorial);
+		return "redirect:/editorial/index";		
 	}
 
 	@GetMapping("/nueva")
