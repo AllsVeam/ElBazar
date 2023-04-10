@@ -49,7 +49,7 @@ public class DatabaseWebSecurity {
 				.anyRequest().authenticated()
 				// El formulario de Login no requiere autenticacion
 				//.and().formLogin().loginPage("/login").permitAll();
-				.and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll().failureUrl("/login?error=true")
+				.and().formLogin().loginPage("/login").defaultSuccessUrl("/").permitAll().failureUrl("/error?continue")
 			    .usernameParameter("username").passwordParameter("password")
 			    .permitAll().and().logout().logoutSuccessUrl("/login?logout=true")
 			    .permitAll().and().exceptionHandling().accessDeniedPage("/403");
