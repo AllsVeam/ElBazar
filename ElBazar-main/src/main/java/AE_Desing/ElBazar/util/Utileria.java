@@ -15,7 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class Utileria {
 	
-	@Value("${ElBazar-production.ruta.imagenes}")
+	@Value("${ElBazar-main.ruta.imagenes}")
 	private String ruta;
 
 	public String uploadImage(MultipartFile file) {
