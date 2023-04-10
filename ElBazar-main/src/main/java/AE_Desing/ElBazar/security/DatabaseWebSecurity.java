@@ -39,12 +39,18 @@ public class DatabaseWebSecurity {
 		http.authorizeHttpRequests()
 				// Los recursos estáticos no requieren autenticación
 				.requestMatchers("/js/**","/css/**", "/images/**", "/bootstrap/**", "/tinymce/**").permitAll()
+				
 				// Las vistas públicas no requieren autenticación
-				.requestMatchers("/", "/libro", "/libro/detalle", "/signup", "/guardar", "/acerca", "/search", "/registro").permitAll()
+				.requestMatchers("/", "/libro", "/libro/detalle", "/login", "/acerca", "/registro").permitAll()
+				
 				// asignar permisos a URL'S por roles
-				.requestMatchers("/Usuarios/**").hasAnyAuthority("Administrador").requestMatchers("/editorial/**")
-				.hasAnyAuthority("Administrador", "Supervisor").requestMatchers("/libro/**")
-				.hasAnyAuthority("Administrador", "Supervisor")
+				.requestMatchers("/libro/**").hasAnyAuthority("Administrador", "Supervisor")
+				.requestMatchers("/editorial/**").hasAnyAuthority("Administrador", "Supervisor")
+				.requestMatchers("/clasificacion/**").hasAnyAuthority("Administrador", "Supervisor")
+				.requestMatchers("/autor/**").hasAnyAuthority("Administrador", "Supervisor")
+				.requestMatchers("/usuarios/**").hasAnyAuthority("Administrador")
+				.requestMatchers("/empleados/**").hasAnyAuthority("Administrador")
+				
 				// Todas las demás URLs de la Aplicación requieren autenticación
 				.anyRequest().authenticated()
 				// El formulario de Login no requiere autenticacion
