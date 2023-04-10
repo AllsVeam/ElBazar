@@ -67,6 +67,16 @@ public class HomeController {
 		return "login";
 	}
 	
+	@GetMapping("/error/**")
+	public String error() {		
+		return "redirect:/";
+	}
+	
+	@GetMapping("/error")
+	public String error1() {		
+		return "redirect:/";
+	}
+	
 	@GetMapping("/logout")
 	public String logout(HttpServletRequest request) {
 		SecurityContextLogoutHandler logoutHandler = new SecurityContextLogoutHandler();
