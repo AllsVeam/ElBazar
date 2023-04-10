@@ -32,7 +32,7 @@ import AE_Desing.ElBazar.util.Utileria;
 @RequestMapping("/libro")
 public class LibroController {
 
-	@Value("${proyecto.ruta.imagenes}")
+	@Value("${ElBazar-main.ruta.imagenes}")
 	private String ruta;
 
 	@Autowired
