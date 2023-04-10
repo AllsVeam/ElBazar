@@ -15,7 +15,7 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="usuarios")
+@Table(name="Usuarios")
 public class Usuario {
 
 	@Id
@@ -85,6 +85,7 @@ public class Usuario {
 				+ ", password=" + password + ", estatus=" + estatus + ", fechaRegistro=" + fechaRegistro + ", perfiles="
 				+ perfiles + "]";
 	}
+	
 	public void agregar(Perfil tempPerfil) {
 		if(perfiles==null) {
 			perfiles = new LinkedList<Perfil>();
