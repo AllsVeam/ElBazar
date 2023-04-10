@@ -36,7 +36,7 @@
 					<a class="nav-link" th:href="@{/acerca}">Acerca</a>
 				</li>
 				<a class="btn btn-primary" th:href="@{/login}">Ingresar</a>&nbsp;
-				<a class="btn btn-primary" th:href="@{/signup}">Registrarse</a>&nbsp;
+				<a class="btn btn-primary" th:href="@{/registro}">Registrarse</a>&nbsp;
 				<a class="btn btn-danger" th:href="@{/logout}" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')">Salir</a>
 			</ul>
 
