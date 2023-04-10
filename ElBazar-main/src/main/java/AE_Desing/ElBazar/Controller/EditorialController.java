@@ -1,8 +1,5 @@
 package AE_Desing.ElBazar.Controller;
 
-import java.util.LinkedList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -47,11 +44,11 @@ public class EditorialController {
 	@GetMapping("/eliminar")
 	public String eliminar(@RequestParam("id") int idEditorial, RedirectAttributes model) {		
 		for (Libro libro : serviceLib.obtenerLibros()) {
-			if (libro.getEditorial().getId() == idEditorial) {
-				serviceEdit.eliminar(idEditorial);
-				model.addFlashAttribute("msg", "Editorial Eliminada correctamente");				
-			}else {
+			if (libro.getEditorial().getId() == idEditorial) {				
 				model.addFlashAttribute("msg", "La Editorial no se puede eliminar pertenece a un libro");				
+			}else {
+				model.addFlashAttribute("msg", "Editorial Eliminada correctamente");
+				serviceEdit.eliminar(idEditorial);
 			}
 		}			
 		return "redirect:/editorial/index";
