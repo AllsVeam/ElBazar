@@ -91,6 +91,9 @@ public class HomeController {
 	
 	@PostMapping("/guardar")
 	public String guardar(Usuario usuario) {
+		
+		
+		
 		usuario.setEstatus(1);		
 		// Encryptar usuario
 		usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
