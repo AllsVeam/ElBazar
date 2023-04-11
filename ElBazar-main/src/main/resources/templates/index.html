@@ -6,8 +6,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<link rel="icon" th:href="@{/images/icon.png}">	<title>Libreria | El Bazar del Libro</title>
-	
+	<link rel="icon" th:href="@{/images/icon.png}">
+	<title>Libreria | El Bazar del Libro</title>
+
 
 	<!-- Font Awesome -->
 	<link rel="stylesheet" th:href="@{/https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css}">
@@ -65,7 +66,7 @@
 						</li>
 						<li>
 							<a th:href="@{/registro}" class="btn btn-default btn-lg wow fadeInLeft"
-								data-wow-delay="0.2s"sec:authorize="isAnonymous()">Registrate</a>
+								data-wow-delay="0.2s" sec:authorize="isAnonymous()">Registrate</a>
 							<a th:href="@{/login}" class="btn btn-default btn-lg wow fadeInRight" data-wow-delay="0.2s"
 								rel="nofollow" sec:authorize="isAnonymous()">Inicia Sesion</a>
 						</li>
@@ -85,15 +86,15 @@
 			<section id="best-features">
 
 				<div class="row pt-4">
-					<!--Second columnn-->					
+					<!--Second columnn-->
 					<div class="col-lg-3 mb-r" th:each="relevante:${relevante}">
 						<!--Card-->
 						<div class="card wow fadeIn" data-wow-delay="0.2s">
 
 							<!--Card image-->
 							<a th:href="@{/detalle(id=${relevante.id})}">
-							<img class="img-fluid" th:src="@{/images/{img}(img=${relevante.portada})}"
-								alt="Card image cap"></a >
+								<img class="img-fluid" th:src="@{/images/{img}(img=${relevante.portada})}"
+									alt="Card image cap"></a>
 
 							<!--Card content-->
 							<div class="card-body">
@@ -107,10 +108,10 @@
 							</div>
 
 						</div>
-						
+
 						<!--/.Card-->
 					</div>
-					
+
 					<!--Second columnn-->
 				</div>
 
