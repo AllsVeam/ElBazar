@@ -9,7 +9,7 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/libro?id=0}">Libros</a>
+					<a class="nav-link" th:href="@{/libro}">Libros</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/libro/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')" >Lista de libros</a>
@@ -30,7 +30,7 @@
 					<a class="nav-link" th:href="@{/empleados/index}" sec:authorize="hasAnyAuthority('Administrador')">Empleados</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/empleados/index}" sec:authorize="hasAnyAuthority('Administrador')">Usuarios</a>
+					<a class="nav-link" th:href="@{/usuario/index}" sec:authorize="hasAnyAuthority('Administrador')">Usuarios</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/acerca}">Acerca...</a>

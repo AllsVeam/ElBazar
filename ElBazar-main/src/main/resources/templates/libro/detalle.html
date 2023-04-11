@@ -40,12 +40,11 @@
 					<div class="card">
 						<h4 class="card-header">Titulo:<strong th:text="${libro.titulo}"></strong></h4>
 						<div class="card-body">
-							<h5 class="card-title"><strong>Autor</strong> <span
-									th:text="${libro.autor.nombre}"></span></h5>
+							<h5 class="card-title"><strong>Autor</strong> <span th:text="${libro.autor.nombre}"></span>
+							</h5>
 							<h6 class="card-title"><strong>Publicado: </strong> <span th:text="${libro.fecha}"></span>
 							</h6>
-							<h6 class="card-title"><strong>Precio: </strong><span
-									th:text="${libro.costo}"></span></h6>							
+							<h6 class="card-title"><strong>Precio: </strong><span th:text="${libro.costo}"></span></h6>
 							<div class="card bg-light mb-3">
 								<div class="card-body">
 									<h5 class="card-title">Descripcion del libro</h5>
@@ -53,8 +52,8 @@
 								</div>
 							</div>
 							<a class="btn btn-primary" href="#" role="button" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')
-								title="Quiero aplicar para esta oferta de trabajo."><i class="fas fa-file"
-									aria-hidden="true"></i> Comprar </a>
+								title=" Quiero aplicar para esta oferta de trabajo."><i class="fas fa-file" aria-hidden="true"></i> Comprar
+							</a>
 						</div>
 					</div>
 				</div>
@@ -63,7 +62,7 @@
 		</div>
 	</main>
 
-	
+
 
 	<!-- SCRIPTS -->
 

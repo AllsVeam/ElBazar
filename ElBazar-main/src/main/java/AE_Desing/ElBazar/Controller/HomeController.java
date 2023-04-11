@@ -40,16 +40,17 @@ public class HomeController {
 	}
 	
 	@GetMapping("/libro")
-	public String mostrarLibro(@RequestParam("id") int idCat, Model model){
-		if(idCat==0) {
+	public String mostrarLibro(Model model){		
 			model.addAttribute("clasificacion", serviceClas.obtenerClasificaciones());
 			model.addAttribute("libro", serviceLib.obtenerLibros());
-			return "libro";
-		}else{
+			return "libro";		
+	}
+	
+	@GetMapping("/libroCat")
+	public String mostrarLibroCat(@RequestParam("id") int idCat, Model model){		
 			model.addAttribute("clasificacion", serviceClas.obtenerClasificaciones());
 			model.addAttribute("libro", serviceLib.buscarPorClas(idCat));
-			return "libro";
-		}
+			return "libro";		
 	}
 	
 	@GetMapping("/clasificacion")
