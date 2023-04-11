@@ -46,6 +46,12 @@ public class HomeController {
 			return "libro";		
 	}
 	
+	@GetMapping("/detalle")
+	public String detalleLibro(@RequestParam("id") int idLibro, Model model) {
+		model.addAttribute("libro", serviceLib.buscarPorId(idLibro));
+		return "libro/detalle";
+	}
+	
 	@GetMapping("/libroCat")
 	public String mostrarLibroCat(@RequestParam("id") int idCat, Model model){		
 			model.addAttribute("clasificacion", serviceClas.obtenerClasificaciones());
