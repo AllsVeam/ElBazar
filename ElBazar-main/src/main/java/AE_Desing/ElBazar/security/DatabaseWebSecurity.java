@@ -41,7 +41,7 @@ public class DatabaseWebSecurity {
 				.requestMatchers("/js/**","/css/**", "/images/**", "/bootstrap/**", "/tinymce/**").permitAll()
 				
 				// Las vistas públicas no requieren autenticación
-				.requestMatchers("/", "/libro", "/libro/detalle", "/login", "/acerca", "/registro").permitAll()
+				.requestMatchers("/", "/libro", "/detalle", "/login", "/acerca", "/registro").permitAll()
 				
 				// asignar permisos a URL'S por roles
 				.requestMatchers("/libro/**").hasAnyAuthority("Administrador", "Supervisor")
