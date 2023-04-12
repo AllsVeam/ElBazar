@@ -12,32 +12,36 @@
 					<a class="nav-link" th:href="@{/libro}">Libros</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/libro/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')" >Lista de libros</a>
+					<a class="nav-link" th:href="@{/libro/index}"
+						sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Lista de libros</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/editorial/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Editorial</a>
+					<a class="nav-link" th:href="@{/editorial/index}"
+						sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Editorial</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/clasificacion/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Clasificacion</a>
+					<a class="nav-link" th:href="@{/clasificacion/index}"
+						sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Clasificacion</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/autor/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Autor</a>
+					<a class="nav-link" th:href="@{/autor/index}"
+						sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Autor</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/compras/index}" sec:authorize="hasAnyAuthority('Administrador','Supervisor')">Compras</a>
+					<a class="nav-link" th:href="@{/empleados/index}"
+						sec:authorize="hasAnyAuthority('Administrador')">Empleados</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" th:href="@{/empleados/index}" sec:authorize="hasAnyAuthority('Administrador')">Empleados</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" th:href="@{/usuario/index}" sec:authorize="hasAnyAuthority('Administrador')">Usuarios</a>
+					<a class="nav-link" th:href="@{/usuario/index}"
+						sec:authorize="hasAnyAuthority('Administrador')">Usuarios</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" th:href="@{/acerca}">Acerca...</a>
 				</li>
 				<a class="btn btn-primary" th:href="@{/login}" sec:authorize="isAnonymous()">Ingresar</a>&nbsp;
 				<a class="btn btn-primary" th:href="@{/registro}" sec:authorize="isAnonymous()">Registrarse</a>&nbsp;
-				<a class="btn btn-danger" th:href="@{/logout}" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')">Salir</a>
+				<a class="btn btn-danger" th:href="@{/logout}"
+					sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')">Salir</a>
 			</ul>
 
 		</div>

@@ -74,11 +74,6 @@ public class HomeController {
 		return "login";
 	}
 	
-	@GetMapping("/error/**")
-	public String error() {		
-		return "redirect:/";
-	}
-	
 	@GetMapping("/error")
 	public String error1() {		
 		return "redirect:/";
@@ -98,9 +93,6 @@ public class HomeController {
 	
 	@PostMapping("/guardar")
 	public String guardar(Usuario usuario) {
-		
-		
-		
 		usuario.setEstatus(1);		
 		// Encryptar usuario
 		usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));

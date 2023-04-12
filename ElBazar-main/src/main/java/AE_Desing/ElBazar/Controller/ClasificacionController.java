@@ -12,13 +12,19 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import AE_Desing.ElBazar.entity.Clasificacion;
+import AE_Desing.ElBazar.entity.Libro;
 import AE_Desing.ElBazar.services.IntServiceClasificacion;
+import AE_Desing.ElBazar.services.IntServiceLibros;
 
 @RequestMapping("/clasificacion")
 @Controller
 public class ClasificacionController {
 	
-	@Autowired IntServiceClasificacion serviceClas;
+	@Autowired 
+	private IntServiceClasificacion serviceClas;
+	
+	@Autowired
+	private IntServiceLibros serviceLib;
 	
 	@GetMapping("/index")
 	public String mostrarIndex(Model model, Pageable page){	
@@ -36,7 +42,13 @@ public class ClasificacionController {
 	}
 	
 	@GetMapping("/eliminar")
-	public String eliminar(@RequestParam("id") int idClasificacion ,RedirectAttributes model){	
+	public String eliminar(@RequestParam("id") int idClasificacion ,RedirectAttributes model){
+		for (Libro libro : serviceLib.obtenerLibros()) {
+			if (libro.getEditorial().getId()==idClasificacion) {				
+				model.addFlashAttribute("msg", "La Editorial no se puede eliminar pertenece a un libro");
+				return "redirect:/editorial/index";
+			}
+		}
 		serviceClas.eliminar(idClasificacion);
 		model.addFlashAttribute("msg", "Clasificacion Eliminada correctamente");
 		return "redirect:/clasificacion/index";

@@ -12,13 +12,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import AE_Desing.ElBazar.entity.Autor;
+import AE_Desing.ElBazar.entity.Libro;
 import AE_Desing.ElBazar.services.IntServiceAutor;
+import AE_Desing.ElBazar.services.IntServiceLibros;
 
 @RequestMapping("/autor")
 @Controller
 public class AutorController {
 	
 	@Autowired IntServiceAutor serviceAutor;
+	
+	@Autowired
+	private IntServiceLibros serviceLib;
 
 	@GetMapping("/index")
 	public String mostrarIndex(Model model, Pageable page){	
@@ -36,7 +41,13 @@ public class AutorController {
 	}
 	
 	@GetMapping("/eliminar")
-	public String eliminar(@RequestParam("id") int idAutor,RedirectAttributes model){	
+	public String eliminar(@RequestParam("id") int idAutor,RedirectAttributes model){
+		for (Libro libro : serviceLib.obtenerLibros()) {
+			if (libro.getEditorial().getId()==idAutor) {				
+				model.addFlashAttribute("msg", "La Editorial no se puede eliminar pertenece a un libro");
+				return "redirect:/editorial/index";
+			}
+		}
 		serviceAutor.eliminar(idAutor);
 		model.addFlashAttribute("msg", "Autor Eliminado correctamente");
 		return "redirect:/autor/index";
