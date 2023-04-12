@@ -56,8 +56,9 @@
 					<div class="card wow fadeIn" data-wow-delay="0.2s">
 
 						<!--Card image-->
-						<img class="img-fluid" th:src="@{/images/{img}(img=${libro.portada})}" alt="Card image cap">
-
+						<a th:href="@{/detalle(id=${libro.id})}">
+							<img class="img-fluid" th:src="@{/images/{img}(img=${libro.portada})}" alt="Card image cap">
+						</a>
 						<!--Card content-->
 						<div class="card-body">
 							<!--Title-->
