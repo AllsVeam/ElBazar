@@ -43,7 +43,7 @@ public class AutorController {
 	@GetMapping("/eliminar")
 	public String eliminar(@RequestParam("id") int idAutor,RedirectAttributes model){
 		for (Libro libro : serviceLib.obtenerLibros()) {
-			if (libro.getEditorial().getId()==idAutor) {				
+			if (libro.getAutor().getId()==idAutor) {				
 				model.addFlashAttribute("msg", "El autor no se puede eliminar pertenece a un libro");
 				return "redirect:/autor/index";
 			}

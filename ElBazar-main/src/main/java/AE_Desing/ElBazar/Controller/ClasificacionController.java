@@ -44,7 +44,7 @@ public class ClasificacionController {
 	@GetMapping("/eliminar")
 	public String eliminar(@RequestParam("id") int idClasificacion ,RedirectAttributes model){
 		for (Libro libro : serviceLib.obtenerLibros()) {
-			if (libro.getEditorial().getId()==idClasificacion) {				
+			if (libro.getClasificacion().getId()==idClasificacion) {				
 				model.addFlashAttribute("msg", "La Clasificacion no se puede eliminar pertenece a un libro");
 				return "redirect:/clasificacion/index";
 			}
