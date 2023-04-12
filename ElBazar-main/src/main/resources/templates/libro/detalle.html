@@ -51,8 +51,8 @@
 									<p class="card-text" th:utext="${libro.descripcion}"></p>
 								</div>
 							</div>
-							<a class="btn btn-primary" href="#" role="button" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')
-								title=" Quiero aplicar para esta oferta de trabajo."><i class="fas fa-file" aria-hidden="true"></i> Comprar
+							<a class="btn btn-primary" href="#" role="button" sec:authorize="hasAnyAuthority('Administrador','Supervisor','Usuarios')"
+								title=" Quiero comprar este libro"><i class="fas fa-file" aria-hidden="true"></i> Comprar
 							</a>
 						</div>
 					</div>
